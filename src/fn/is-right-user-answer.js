@@ -5,7 +5,7 @@ export default (systemAnswer, userAnswer) => {
     isRight = true;
     console.log('Correct!');
   } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${systemAnswer}.`);
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${systemAnswer}'.`);
   }
 
   return isRight;
