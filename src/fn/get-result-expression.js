@@ -1,9 +1,17 @@
-export default (expression) => {
-  let resultOfExpression;
-  const operator = expression[1];
-  const num1 = expression[0];
-  const num2 = expression[2];
+export default () => {
+  const randomExpression = [];
+  const symbols = '+-*';
+  const randomSymb = symbols.charAt(Math.random() * symbols.length);
 
+  randomExpression.push(Math.floor(Math.random() * 20));
+  randomExpression.push(randomSymb);
+  randomExpression.push(Math.floor(Math.random() * 20));
+
+  const operator = randomExpression[1];
+  const num1 = randomExpression[0];
+  const num2 = randomExpression[2];
+
+  let resultOfExpression;
   if (operator === '+') {
     resultOfExpression = num1 + num2;
   } else if (operator === '-') {
@@ -12,5 +20,5 @@ export default (expression) => {
     resultOfExpression = num1 * num2;
   }
 
-  return resultOfExpression.toString();
+  return [randomExpression, resultOfExpression];
 };

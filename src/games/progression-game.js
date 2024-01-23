@@ -1,4 +1,4 @@
-import getResult from '../index2.js';
+import getResult from '../index.js';
 import getProgression from '../fn/get-progression.js';
 
 export default () => {
