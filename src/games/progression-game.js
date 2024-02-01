@@ -1,14 +1,9 @@
 import getResult from '../index.js';
 
-const getProgression = () => {
+const progressionWzEmptySpace = (amountOfNums, step) => {
   const progression = [];
 
   let num = Math.floor(Math.random() * 10);
-
-  let amountOfNums = Math.floor(Math.random() * 10);
-  if (amountOfNums < 5) amountOfNums = 5;
-
-  const step = 1 + Math.floor(Math.random() * 15);
 
   progression.push(num);
   for (let i = 0; i < amountOfNums; i += 1) {
@@ -19,7 +14,19 @@ const getProgression = () => {
   const emptyPlace = progression[randomEmptySpace];
   progression[randomEmptySpace] = '..';
 
-  return [progression, emptyPlace];
+  const emptyPlaceInString = emptyPlace.toString();
+  const progressionWzJoin = progression.join(' ');
+
+  return [progressionWzJoin, emptyPlaceInString];
+};
+
+const getProgression = () => {
+  let amountOfNums = Math.floor(Math.random() * 10);
+  if (amountOfNums < 5) amountOfNums = 5;
+
+  const step = 1 + Math.floor(Math.random() * 15);
+
+  return progressionWzEmptySpace(amountOfNums, step);
 };
 
 export default () => {

@@ -5,7 +5,10 @@ const getEvenNum = () => {
 
   const resultPrime = (randomNum % 2) ? 'no' : 'yes';
 
-  return [[randomNum], resultPrime];
+  const numInString = randomNum.toString();
+  const resultInString = resultPrime.toString();
+
+  return [numInString, resultInString];
 };
 
 export default () => {

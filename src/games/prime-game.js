@@ -8,7 +8,9 @@ const getPrime = () => {
     if (randomNum % i === 0) resultPrime = 'no';
   }
 
-  return [[randomNum], resultPrime];
+  const numInString = randomNum.toString();
+
+  return [numInString, resultPrime];
 };
 
 export default () => {
