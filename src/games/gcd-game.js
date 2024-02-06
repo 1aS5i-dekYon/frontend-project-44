@@ -1,4 +1,5 @@
 import getResult from '../index.js';
+import getRandom from '../utils.js';
 
 const GCD = (x, y) => {
   if (y > x) return GCD(y, x);
@@ -7,17 +8,13 @@ const GCD = (x, y) => {
 };
 
 const getGCD = () => {
-  const randomNumsForGcd = [];
+  const num1 = getRandom();
+  const num2 = getRandom();
+  const expression = `${num1} ${num2}`;
 
-  randomNumsForGcd.push(Math.floor(Math.random() * 100));
-  randomNumsForGcd.push(Math.floor(Math.random() * 100));
+  const result = GCD(num1, num2);
 
-  const resultGcd = GCD(randomNumsForGcd[0], randomNumsForGcd[1]);
-
-  const numsWzJoin = randomNumsForGcd.join(' ');
-  const resultInString = resultGcd.toString();
-
-  return [numsWzJoin, resultInString];
+  return [expression, `${result}`];
 };
 
 export default () => {

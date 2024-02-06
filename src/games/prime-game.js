@@ -1,16 +1,19 @@
 import getResult from '../index.js';
+import getRandom from '../utils.js';
+
+const isPrime = (num) => {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) return false;
+  }
+  return true;
+};
 
 const getPrime = () => {
-  const randomNum = Math.floor(Math.random() * 38);
+  const num = getRandom(38);
 
-  let resultPrime = 'yes';
-  for (let i = 2; i < randomNum; i += 1) {
-    if (randomNum % i === 0) resultPrime = 'no';
-  }
+  const result = (isPrime(num)) ? 'yes' : 'no';
 
-  const numInString = randomNum.toString();
-
-  return [numInString, resultPrime];
+  return [`${num}`, `${result}`];
 };
 
 export default () => {
