@@ -14,7 +14,7 @@ const getGCD = () => {
 
   const result = GCD(num1, num2);
 
-  return [expression, `${result}`];
+  return [expression, result.toString()];
 };
 
 export default () => {

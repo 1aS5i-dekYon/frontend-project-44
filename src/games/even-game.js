@@ -1,17 +1,14 @@
 import getResult from '../index.js';
 import getRandom from '../utils.js';
 
-const isEven = (num) => {
-  if (num % 2 === 0) return true;
-  return false;
-};
+const isEven = (num) => !(num % 2);
 
 const getEvenNum = () => {
   const num = getRandom();
 
-  const result = (isEven(num)) ? 'yes' : 'no';
+  const result = isEven(num) ? 'yes' : 'no';
 
-  return [`${num}`, `${result}`];
+  return [num.toString(), result];
 };
 
 export default () => {

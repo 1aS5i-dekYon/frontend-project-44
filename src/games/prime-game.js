@@ -11,9 +11,9 @@ const isPrime = (num) => {
 const getPrime = () => {
   const num = getRandom(38);
 
-  const result = (isPrime(num)) ? 'yes' : 'no';
+  const result = isPrime(num) ? 'yes' : 'no';
 
-  return [`${num}`, `${result}`];
+  return [num.toString(), result];
 };
 
 export default () => {
