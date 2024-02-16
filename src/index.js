@@ -17,9 +17,8 @@ export default (gameFn, userTask) => {
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${resultOfGameFn}'.`);
       console.log(`Let's try again, ${userName}!`);
-      return false;
+      return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
-  return true;
 };

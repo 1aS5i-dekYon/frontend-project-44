@@ -1,31 +1,30 @@
 import getResult from '../index.js';
 import getRandom from '../utils.js';
 
-const getProgression = (amountOfNums, step) => {
-  const result = [];
+const makeProgression = (amountOfNums, step) => {
   let num = getRandom(10);
+  const result = [num];
 
-  result.push(num);
   for (let i = 0; i < amountOfNums; i += 1) {
     result.push(num += step);
   }
   return result;
 };
 
-const makeProgressionWzEmptyPlace = () => {
+const getProgression = () => {
   const amountOfNums = getRandom(10, 5);
   const step = getRandom(15, 1);
 
-  const progression = getProgression(amountOfNums, step);
+  const progression = makeProgression(amountOfNums, step);
 
-  const randomEmptySpace = getRandom(amountOfNums);
-  const emptyPlace = progression[randomEmptySpace];
-  progression[randomEmptySpace] = '..';
+  const emptySpace = getRandom(amountOfNums);
+  const emptyPlace = progression[emptySpace];
+  progression[emptySpace] = '..';
 
   return [progression.join(' '), emptyPlace.toString()];
 };
 
 export default () => {
   const userTask = 'What number is missing in the progression?';
-  getResult(makeProgressionWzEmptyPlace, userTask);
+  getResult(getProgression, userTask);
 };
